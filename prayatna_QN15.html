@@ -1,74 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flexbox Layout Structure</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-            font-size: 14px;
-        }
-
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-        }
-
-        .box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 150px;
-            padding: 10px;
-        }
-
-        /* Row 1: Full-width */
-        .area-1 {
-            background-color: #ffb77d;
-            flex: 0 0 100%;
-        }
-
-        /* Row 2: Half-width split */
-        .area-2 {
-            background-color: #8cb9df;
-            flex: 0 0 50%;
-        }
-        
-        .area-3 {
-            background-color: #83d6a8;
-            flex: 0 0 50%;
-        }
-
-        /* Row 3: One-third split */
-        .area-4 {
-            background-color: #e59385;
-            flex: 0 0 33.33%;
-        }
-
-        .area-5 {
-            background-color: #e8d082;
-            flex: 0 0 33.33%;
-        }
-
-        .area-6 {
-            background-color: #b1a7ec;
-            flex: 0 0 33.34%;
-        }
-    </style>
+<title>Button Events</title>
 </head>
+
 <body>
-    <div class="flex-container">
-        <div class="box area-1">Content Area 1</div>
-        
-        <div class="box area-2">Content Area 2</div>
-        <div class="box area-3">Content Area 3</div>
-        
-        <div class="box area-4">Content Area 4</div>
-        <div class="box area-5">Content Area 5</div>
-        <div class="box area-6">Content Area 6</div>
-    </div>
+
+<p id="txt">
+This is a sample paragraph for JavaScript events.
+</p>
+
+<button onclick="document.body.style.background='lightblue'">
+Change BG
+</button>
+
+<button onclick="txt.style.background='yellow'">
+Change Paragraph BG
+</button>
+
+<button onclick="txt.style.display='none'">
+Hide Para
+</button>
+
+<button onclick="txt.style.display='block'">
+Show Para
+</button>
+
+<button onclick="txt.style.fontSize=(parseInt(getComputedStyle(txt).fontSize)+2)+'px'">
+Inc. Font Size
+</button>
+
+<button onclick="txt.style.fontSize=(parseInt(getComputedStyle(txt).fontSize)-2)+'px'">
+Dec. Font Size
+</button>
+
+<button onclick="txt.style.fontSize='12px'">
+Reset Font to 12pt
+</button>
+
+<button onclick="txt.style.color='red'">
+Change Text Color
+</button>
+
 </body>
 </html>

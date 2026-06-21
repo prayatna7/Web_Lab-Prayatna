@@ -1,57 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Time Table Layout</title>
-    <style>
-        table, th, td {
-            border: 2px solid #333;
-            text-align: center;
-        }
-    </style>
-</head>
 <body>
 
-    <table style="width: 400px;">
-        <tr>
-            <th colspan="6">Time Table</th>
-        </tr>
-        <tr>
-            <td rowspan="6"><b>Hours</b></td>
-            <td>Mon</td>
-            <td>Tue</td>
-            <td>Wed</td>
-            <td>Thu</td>
-            <td>Fri</td>
-        </tr>
-        <tr>
-            <td>Math</td>
-            <td>Science</td>
-            <td>Math</td>
-            <td>Science</td>
-            <td>Arts</td>
-        </tr>
-        <tr>
-            <td>Math</td>
-            <td>Science</td>
-            <td>Math</td>
-            <td>Science</td>
-            <td>Arts</td>
-        </tr>
-        <tr>
-            <th colspan="5">Lunch</th>
-        </tr>
-        <tr>
-            <td>Math</td>
-            <td>Science</td>
-            <td>Math</td>
-            <td colspan="2" rowspan="2">Project</td>
-        </tr>
-        <tr>
-            <td>Math</td>
-            <td>Science</td>
-            <td>Math</td>
-        </tr>
-    </table>
+<div id="box"></div>
+
+<script>
+let n = Number(prompt("Enter limit:"));
+document.write("Because You Entered "+n);
+let box = document.getElementById("box");
+
+function prime(x){
+    if(x < 2) return false;
+    for(let i=2; i<x; i++)
+        if(x%i==0) return false;
+    return true;
+}
+
+for(let i=1; i<=n; i++){
+    let p = document.createElement("span");
+    p.innerHTML = i + " ";
+
+    if(prime(i))
+        p.style.color = "red";
+    else if(i%2==0)
+        p.style.color = "green";
+    else
+        p.style.color = "blue";
+
+    box.appendChild(p);
+}
+</script>
 
 </body>
 </html>

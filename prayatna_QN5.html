@@ -2,49 +2,21 @@
 <html>
 <body>
 
-<h2 align="center">Class Routine</h2>
+<h3>Age Calculator</h3>
 
-<table border="1" cellpadding="10" cellspacing="3" align="center">
+Enter Birth Year:
+<input id="year">
+<button onclick="age()">Calculate</button>
 
-<tr>
-<th>Day</th>
-<th>6:00-8:00</th>
-<th>7:00-7:30</th>
-<th>7:30-9:30</th>
-</tr>
+<p id="result"></p>
 
-<tr>
-<td>Monday</td>
-<td>Web Technology II</td>
-<td rowspan="4">Break</td>
-<td>Database</td>
-</tr>
-
-<tr>
-<td>Tuesday</td>
-<td>OS</td>
-<td>Networking</td>
-</tr>
-
-<tr>
-<td>Wednesday</td>
-<td>Java</td>
-<td>Python</td>
-</tr>
-
-<tr>
-<td>Thursday</td>
-<td>Database</td>
-<td>Microprocessor</td>
-</tr>
-
-<tr>
-<td>Friday</td>
-<td colspan="3">Project Work</td>
-</tr>
-
-</table>
+<script>
+function age(){
+    let y = document.getElementById("year").value;
+    let a = 2026 - y;
+    document.getElementById("result").innerHTML = "Age: " + a;
+}
+</script>
 
 </body>
-
 </html>

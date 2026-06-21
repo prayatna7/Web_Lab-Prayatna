@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bookstore>
+    <Book category="Technology">
+        <Title>Learning Web Design</Title>
+        <Author>Jennifer Robbins</Author>
+        <Year>2018</Year>
+        <Price>45.99</Price>
+    </Book>
+    <Book category="Fiction">
+        <Title>The Great Gatsby</Title>
+        <Author>F. Scott Fitzgerald</Author>
+        <Year>1925</Year>
+        <Price>12.50</Price>
+    </Book>
+    <Book category="Programming">
+        <Title>JavaScript: The Good Parts</Title>
+        <Author>Douglas Crockford</Author>
+        <Year>2008</Year>
+        <Price>29.99</Price>
+    </Book>
+</Bookstore>

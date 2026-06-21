@@ -1,140 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration and Login Form</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-        body {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://picsum.photos') no-repeat center center/cover;
-            min-height: 100vh;
-            color: #fff;
-            padding: 40px 20px;
-        }
-        .title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .container {
-            display: flex;
-            max-width: 900px;
-            margin: 0 auto;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .box {
-            flex: 1;
-            min-width: 300px;
-            background: rgba(20, 24, 30, 0.8);
-            padding: 30px;
-            border-radius: 4px;
-        }
-        h2 {
-            color: #00bcd4;
-            font-size: 20px;
-            margin-bottom: 25px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border-radius: 4px;
-            outline: none;
-        }
-        .hint {
-            font-size: 11px;
-            color: #aaa;
-            margin-top: 5px;
-        }
-        .radio-group, .check-group {
-            margin: 15px 0;
-            font-size: 13px;
-        }
-        .radio-group label, .check-group label {
-            margin-right: 15px;
-            cursor: pointer;
-        }
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: #b58125;
-            border: none;
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: 15px;
-        }
-        .btn:hover {
-            background: #96691d;
-        }
-    </style>
-</head>
 <body>
 
-    <h1 class="title">Registration / Login Form</h1>
+<h3>Cookie Example</h3>
 
-    <div class="container">
-        <!-- Register Section -->
-        <div class="box">
-            <h2>Register Form :</h2>
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Username" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                    <div class="hint">Please enter a valid email address</div>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" required>
-                    <div class="hint">Minimum of 6 characters</div>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Confirm password" required>
-                </div>
-                <div class="radio-group">
-                    <label><input type="radio" name="gender" value="female"> Female</label>
-                    <label><input type="radio" name="gender" value="male"> Male</label>
-                </div>
-                <div class="check-group">
-                    <label><input type="checkbox" required> I have read and accept terms of use.</label>
-                </div>
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </div>
+<input id="name" placeholder="Enter name">
 
-        <!-- Login Section -->
-        <div class="box">
-            <h2>Login form :</h2>
-            <form>
-                <div class="form-group">
-                    <input type="email" placeholder="Enter Your Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <div class="check-group">
-                    <label><input type="checkbox"> Remember me</label>
-                </div>
-                <button type="submit" class="btn" style="margin-top: 55px;">Login</button>
-            </form>
-        </div>
-    </div>
+<button onclick="store()">Store</button>
+<button onclick="read()">Read</button>
+<button onclick="remove()">Delete</button>
+
+<p id="result"></p>
+
+<script>
+function store(){
+    let n = document.getElementById("name").value;
+    document.cookie = "username=" + encodeURIComponent(n);
+    alert("Cookie Stored");
+}
+
+function read(){
+    document.getElementById("result").innerHTML = document.cookie;
+}
+
+function remove(){
+    document.cookie = "username=;expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    alert("Cookie Deleted");
+}
+</script>
 
 </body>
 </html>

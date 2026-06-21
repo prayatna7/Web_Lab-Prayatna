@@ -1,75 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>2nd Semester Grade Sheet</title>
-
-  <style>
-    table {
-      border-collapse: collapse;
-      width: 60%;
-      margin: auto;
-      text-align: center;
-      font-family: Arial;
-    }
-
-    th, td {
-      border: 1px solid black;
-      padding: 10px;
-    }
-
-    th {
-      background: green;
-      color: white;
-    }
-
-    h2 {
-      text-align: center;
-    }
-  </style>
-</head>
-
 <body>
-
-<h2>2nd Semester Grade Sheet</h2>
-
-<table>
-  <tr>
-    <th>Subject</th>
-    <th>Marks</th>
-    <th>Grade</th>
-  </tr>
-
-  <tr>
-    <td>Discrete Structure</td>
-    <td>85</td>
-    <td>A</td>
-  </tr>
-
-  <tr>
-    <td>Digital Logic</td>
-    <td>80</td>
-    <td>A</td>
-  </tr>
-
-  <tr>
-    <td>OOP using Java</td>
-    <td>88</td>
-    <td>A+</td>
-  </tr>
-
-  <tr>
-    <td>OBHRM</td>
-    <td>75</td>
-    <td>B+</td>
-  </tr>
-
-  <tr>
-    <td>Business Communication</td>
-    <td>82</td>
-    <td>A</td>
-  </tr>
-
-</table>
-
+<h3>Navigator Object</h3>
+<p id="info"></p>
+<button onclick="getLocation()">Get Location</button>
+<script>
+let text = "";
+text += "Browser Name: " + navigator.appName + "<br>";
+text += "Browser Version: " + navigator.appVersion + "<br>";
+text += "Platform: " + navigator.platform + "<br>";
+document.getElementById("info").innerHTML = text;
+function getLocation(){
+if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(show);
+}
+else{
+    document.write("Geolocation not supported");
+}
+}
+function show(position){
+    document.getElementById("info").innerHTML +=
+    "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 </body>
 </html>

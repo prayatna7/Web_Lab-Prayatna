@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Bookstore [
+    <!ELEMENT Bookstore (Book+)>
+    <!ELEMENT Book (Title, Author, Year, Price)>
+    <!ELEMENT Title (#PCDATA)>
+    <!ELEMENT Author (#PCDATA)>
+    <!ELEMENT Year (#PCDATA)>
+    <!ELEMENT Price (#PCDATA)>
+    <!ATTLIST Book category CDATA #REQUIRED>
+]>
+
+<Bookstore>
+    <Book category="Technology">
+        <Title>Learning Web Design</Title>
+        <Author>Jennifer Robbins</Author>
+        <Year>2018</Year>
+        <Price>45.99</Price>
+    </Book>
+</Bookstore>

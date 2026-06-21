@@ -1,76 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Menu</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #063970;
-            padding: 15px 30px;
-            color: white;
-            flex-wrap: wrap;
-        }
-        h1 {
-            font-size: 20px;
-        }
-        button {
-            display: none;
-            background: transparent;
-            color: white;
-            border: 1px solid white;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-        ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        a {
-            color: white;
-            text-decoration: none;
-        }
+<style>
+.clock{
+    background:purple;
+    width:270px;
+    padding:15px;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+}
 
-        @media (max-width: 600px) {
-            button {
-                display: block;
-            }
-            ul {
-                flex-direction: column;
-                width: 100%;
-                margin-top: 15px;
-                text-align: center;
-            }
-            li {
-                border-top: 1px solid #1a4f8a;
-                padding: 10px 0;
-            }
-        }
-    </style>
+.box{
+    display:inline-block;
+    background:white;
+    color:black;
+    font-size:35px;
+    padding:10px;
+    margin:5px;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Mystery Code</h1>
-        <button>Menu</button>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-    </header>
+<div class="clock">
+<h2>DIGITAL CLOCK</h2>
+
+<div class="box" id="hour">00</div> :
+<div class="box" id="minute">00</div> :
+<div class="box" id="second">00</div>
+
+</div>
+
+<script>
+function clock(){
+    let time = new Date();
+
+    document.getElementById("hour").innerHTML =
+    String(time.getHours()).padStart(2,'0');
+
+    document.getElementById("minute").innerHTML =
+    String(time.getMinutes()).padStart(2,'0');
+
+    document.getElementById("second").innerHTML =
+    String(time.getSeconds()).padStart(2,'0');
+}
+
+setInterval(clock,1000);
+clock();
+</script>
 
 </body>
 </html>

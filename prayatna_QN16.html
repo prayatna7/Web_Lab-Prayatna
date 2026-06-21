@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three-State Responsive Layout</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Base Component Sizing & Styling */
-        .header { background-color: #f07474; padding: 20px; }
-        .main   { background-color: #ffffff; padding: 40px; flex-grow: 1; border: 1px solid #eaeaea; }
-        .left   { background-color: #ffd166; padding: 30px; }
-        .right  { background-color: #b6f08e; padding: 30px; }
-        .footer { background-color: #62b6eb; padding: 20px; }
-
-        .header { order: 1; }
-        .main   { order: 2; }
-        .left   { order: 3; }
-        .right  { order: 4; }
-        .footer { order: 5; }
-
-        @media (min-width: 600px) and (max-width: 899px) {
-            .container {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            .header { width: 100%; order: 1; }
-            .main   { width: 100%; order: 2; }
-            .left   { width: 50%;  order: 3; }
-            .right  { width: 50%;  order: 4; }
-            .footer { width: 100%; order: 5; }
-        }
-
-        @media (min-width: 900px) {
-            .container {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            .header { width: 100%; order: 1; }
-            
-            /* Columns sit horizontally side-by-side */
-            .left   { width: 20%;  order: 2; height: calc(100vh - 120px); }
-            .main   { width: 60%;  order: 3; height: calc(100vh - 120px); }
-            .right  { width: 20%;  order: 4; height: calc(100vh - 120px); }
-            
-            .footer { width: 100%; order: 5; }
-        }
-    </style>
+<style>
+body{
+    font-family:Arial;
+}
+input,select{
+    margin:5px;
+    padding:5px;
+}
+</style>
 </head>
 <body>
-
-    <div class="container">
-        <header class="header">Header</header>
-        <main class="main">Main</main>
-        <aside class="left">Left</aside>
-        <aside class="right">Right</aside>
-        <footer class="footer">Footer</footer>
-    </div>
-
+<h3>Registration Form</h3>
+<form onsubmit="return validate()">
+Name:
+<input id="name"><br>
+Address:
+<input id="address"><br>
+Username:
+<input id="user"><br>
+Email:
+<input id="email"><br>
+Password:
+<input type="password" id="pass"><br>
+Website:
+<input id="web"><br>
+Phone:
+<input id="phone"><br>
+Gender:
+<input type="radio" name="g" value="Male">Male
+<input type="radio" name="g" value="Female">Female<br>
+Course:
+<select id="course">
+<option value="">Select</option>
+<option>BCA</option>
+<option>BIM</option>
+<option>BIT</option>
+</select><br>
+<button>Submit</button>
+</form>
+<script>
+function validate(){
+let name=document.getElementById("name").value;
+let address=document.getElementById("address").value;
+let user=document.getElementById("user").value;
+let email=document.getElementById("email").value;
+let pass=document.getElementById("pass").value;
+let phone=document.getElementById("phone").value;
+let course=document.getElementById("course").value;
+let gender=document.querySelector('input[name="g"]:checked');
+if(!/^[A-Za-z ]+$/.test(name))
+alert("Invalid Name");
+else if(!/^[A-Za-z0-9_]+$/.test(user))
+alert("Invalid Username");
+else if(!/^(98|97|96)[0-9]{8}$/.test(phone))
+alert("Invalid Phone");
+else if(address=="")
+alert("Enter Address");
+else if(!email.includes("@"))
+alert("Invalid Email");
+else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%]).{8,}$/.test(pass))
+alert("Invalid Password");
+else if(!gender)
+alert("Select Gender");
+else if(course=="")
+alert("Select Course");
+else
+alert("Form Submitted");
+return false;
+}
+</script>
 </body>
 </html>
