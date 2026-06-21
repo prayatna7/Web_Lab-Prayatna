@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #063970;
+            padding: 15px 30px;
+            color: white;
+            flex-wrap: wrap;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        button {
+            display: none;
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            button {
+                display: block;
+            }
+            ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                text-align: center;
+            }
+            li {
+                border-top: 1px solid #1a4f8a;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mystery Code</h1>
+        <button>Menu</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </header>
+
+</body>
+</html>

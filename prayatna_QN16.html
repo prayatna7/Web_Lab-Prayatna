@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-State Responsive Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Base Component Sizing & Styling */
+        .header { background-color: #f07474; padding: 20px; }
+        .main   { background-color: #ffffff; padding: 40px; flex-grow: 1; border: 1px solid #eaeaea; }
+        .left   { background-color: #ffd166; padding: 30px; }
+        .right  { background-color: #b6f08e; padding: 30px; }
+        .footer { background-color: #62b6eb; padding: 20px; }
+
+        .header { order: 1; }
+        .main   { order: 2; }
+        .left   { order: 3; }
+        .right  { order: 4; }
+        .footer { order: 5; }
+
+        @media (min-width: 600px) and (max-width: 899px) {
+            .container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .header { width: 100%; order: 1; }
+            .main   { width: 100%; order: 2; }
+            .left   { width: 50%;  order: 3; }
+            .right  { width: 50%;  order: 4; }
+            .footer { width: 100%; order: 5; }
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .header { width: 100%; order: 1; }
+            
+            /* Columns sit horizontally side-by-side */
+            .left   { width: 20%;  order: 2; height: calc(100vh - 120px); }
+            .main   { width: 60%;  order: 3; height: calc(100vh - 120px); }
+            .right  { width: 20%;  order: 4; height: calc(100vh - 120px); }
+            
+            .footer { width: 100%; order: 5; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">Header</header>
+        <main class="main">Main</main>
+        <aside class="left">Left</aside>
+        <aside class="right">Right</aside>
+        <footer class="footer">Footer</footer>
+    </div>
+
+</body>
+</html>

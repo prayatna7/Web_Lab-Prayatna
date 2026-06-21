@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hover Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .box {
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition-duration: 0.3s;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            font-size: 14px;
+        }
+
+        .z-in:hover img {
+            transform: scale(1.1);
+        }
+
+        .fade:hover img {
+            opacity: 0.5;
+        }
+
+        .blur:hover img {
+            filter: blur(4px);
+        }
+
+        .mask:hover img {
+            filter: grayscale(1);
+        }
+
+        .z-out img {
+            transform: scale(1.1);
+        }
+
+        .z-out:hover img {
+            transform: scale(1);
+        }
+
+        .b-out img {
+            filter: blur(4px);
+        }
+
+        .b-out:hover img {
+            filter: blur(0);
+        }
+
+        .shft:hover img {
+            transform: translateY(-8px);
+        }
+
+        .fall:hover img {
+            transform: translateY(100%);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>HOVER-EFFECT CSS</h2>
+
+    <div class="grid">
+        <div class="box z-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7NSOyTrgSPbEtmVvizI1qicOJ72wkA4ajRA&s"><p>Hover-ZoomIn</p></div>
+        <div class="box fade"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDbgLF_rLfAbAGM_wXR-uV7Y1Xkuy9yhhA&s"><p>Hover-Fade</p></div>
+        <div class="box blur"><img src="https://g2.img-dpreview.com/0092C98398254023B844D78BFF2EC71F.jpg"><p>Hover-Blur</p></div>
+        <div class="box mask"><img src="https://media.istockphoto.com/id/1135639939/photo/a-canadian-sunset-turns-the-clouds-pink-in-northern-saskatchewan.jpg?s=612x612&w=0&k=20&c=YUnoVNb1ZwT9_TWSNLfSDPEKNdZH8Q1_TsZL-QDOmps="><p>Hover-Mask</p></div>
+        <div class="box z-out"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwZh3U28eYDxXKACyu6Vul4qOYTOrhXGbs7w&s"><p>Hover-Zoomout</p></div>
+        <div class="box b-out"><img src="https://aseantourism.travel/wp-content/uploads/waterfall-in-vietnam-1024x682.jpg"><p>Hover-Blurout</p></div>
+        <div class="box shft"><img src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.webp?b=1&s=612x612&w=0&k=20&c=8xbZvMyptEaqMW46diKakhVgkPkAzBi5l7J1yveCZFk="><p>Overlay Text</p></div>
+        <div class="box fall"><img src="https://sun-ecommerce-cdn.azureedge.net/ecommerce/service-sites/asset/SunParadiseLandPhuQuoc/google-doc/post_id_12666/AD_4nXdyCKc42N4HtK_vAI-8JR1hV-QfZSB1nW8RbhoiNjMxYJn2kIAxfi_mox1mlpN_mXLXex-tebtsOLbBwHCNkh-VNxbj3MaVCr6T9c6-gt4C-ZvToxbHnGcdkub5i5X0moHi5v6TVNRNNrv4hDvBQRgVy3Wp7N2zYH0051m5HexPbTmB.webp"><p>Hover-Fall</p></div>
+    </div>
+
+</body>
+</html>
